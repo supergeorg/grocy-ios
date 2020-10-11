@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		78EC778C2533857400DF3BA5 /* grocy_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC778B2533857400DF3BA5 /* grocy_iosApp.swift */; };
+		78EC778E2533857400DF3BA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC778D2533857400DF3BA5 /* ContentView.swift */; };
+		78EC77902533857500DF3BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78EC778F2533857500DF3BA5 /* Assets.xcassets */; };
+		78EC77932533857500DF3BA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78EC77922533857500DF3BA5 /* Preview Assets.xcassets */; };
+		78EC779E2533857500DF3BA5 /* grocy_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC779D2533857500DF3BA5 /* grocy_iosTests.swift */; };
+		78EC77A92533857500DF3BA5 /* grocy_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EC77A82533857500DF3BA5 /* grocy_iosUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78EC779A2533857500DF3BA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78EC77802533857400DF3BA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78EC77872533857400DF3BA5;
+			remoteInfo = "grocy-ios";
+		};
+		78EC77A52533857500DF3BA5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78EC77802533857400DF3BA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78EC77872533857400DF3BA5;
+			remoteInfo = "grocy-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		78EC77882533857400DF3BA5 /* grocy-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "grocy-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EC778B2533857400DF3BA5 /* grocy_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = grocy_iosApp.swift; sourceTree = "<group>"; };
+		78EC778D2533857400DF3BA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		78EC778F2533857500DF3BA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		78EC77922533857500DF3BA5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		78EC77942533857500DF3BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78EC77992533857500DF3BA5 /* grocy-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "grocy-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EC779D2533857500DF3BA5 /* grocy_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = grocy_iosTests.swift; sourceTree = "<group>"; };
+		78EC779F2533857500DF3BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78EC77A42533857500DF3BA5 /* grocy-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "grocy-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EC77A82533857500DF3BA5 /* grocy_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = grocy_iosUITests.swift; sourceTree = "<group>"; };
+		78EC77AA2533857500DF3BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78EC77852533857400DF3BA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EC77962533857500DF3BA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EC77A12533857500DF3BA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78EC777F2533857400DF3BA5 = {
+			isa = PBXGroup;
+			children = (
+				78EC778A2533857400DF3BA5 /* grocy-ios */,
+				78EC779C2533857500DF3BA5 /* grocy-iosTests */,
+				78EC77A72533857500DF3BA5 /* grocy-iosUITests */,
+				78EC77892533857400DF3BA5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		78EC77892533857400DF3BA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78EC77882533857400DF3BA5 /* grocy-ios.app */,
+				78EC77992533857500DF3BA5 /* grocy-iosTests.xctest */,
+				78EC77A42533857500DF3BA5 /* grocy-iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78EC778A2533857400DF3BA5 /* grocy-ios */ = {
+			isa = PBXGroup;
+			children = (
+				78EC778B2533857400DF3BA5 /* grocy_iosApp.swift */,
+				78EC778D2533857400DF3BA5 /* ContentView.swift */,
+				78EC778F2533857500DF3BA5 /* Assets.xcassets */,
+				78EC77942533857500DF3BA5 /* Info.plist */,
+				78EC77912533857500DF3BA5 /* Preview Content */,
+			);
+			path = "grocy-ios";
+			sourceTree = "<group>";
+		};
+		78EC77912533857500DF3BA5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				78EC77922533857500DF3BA5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		78EC779C2533857500DF3BA5 /* grocy-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				78EC779D2533857500DF3BA5 /* grocy_iosTests.swift */,
+				78EC779F2533857500DF3BA5 /* Info.plist */,
+			);
+			path = "grocy-iosTests";
+			sourceTree = "<group>";
+		};
+		78EC77A72533857500DF3BA5 /* grocy-iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				78EC77A82533857500DF3BA5 /* grocy_iosUITests.swift */,
+				78EC77AA2533857500DF3BA5 /* Info.plist */,
+			);
+			path = "grocy-iosUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		78EC77872533857400DF3BA5 /* grocy-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78EC77AD2533857500DF3BA5 /* Build configuration list for PBXNativeTarget "grocy-ios" */;
+			buildPhases = (
+				78EC77842533857400DF3BA5 /* Sources */,
+				78EC77852533857400DF3BA5 /* Frameworks */,
+				78EC77862533857400DF3BA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "grocy-ios";
+			productName = "grocy-ios";
+			productReference = 78EC77882533857400DF3BA5 /* grocy-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		78EC77982533857500DF3BA5 /* grocy-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78EC77B02533857500DF3BA5 /* Build configuration list for PBXNativeTarget "grocy-iosTests" */;
+			buildPhases = (
+				78EC77952533857500DF3BA5 /* Sources */,
+				78EC77962533857500DF3BA5 /* Frameworks */,
+				78EC77972533857500DF3BA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78EC779B2533857500DF3BA5 /* PBXTargetDependency */,
+			);
+			name = "grocy-iosTests";
+			productName = "grocy-iosTests";
+			productReference = 78EC77992533857500DF3BA5 /* grocy-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		78EC77A32533857500DF3BA5 /* grocy-iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78EC77B32533857500DF3BA5 /* Build configuration list for PBXNativeTarget "grocy-iosUITests" */;
+			buildPhases = (
+				78EC77A02533857500DF3BA5 /* Sources */,
+				78EC77A12533857500DF3BA5 /* Frameworks */,
+				78EC77A22533857500DF3BA5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78EC77A62533857500DF3BA5 /* PBXTargetDependency */,
+			);
+			name = "grocy-iosUITests";
+			productName = "grocy-iosUITests";
+			productReference = 78EC77A42533857500DF3BA5 /* grocy-iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78EC77802533857400DF3BA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					78EC77872533857400DF3BA5 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					78EC77982533857500DF3BA5 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 78EC77872533857400DF3BA5;
+					};
+					78EC77A32533857500DF3BA5 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 78EC77872533857400DF3BA5;
+					};
+				};
+			};
+			buildConfigurationList = 78EC77832533857400DF3BA5 /* Build configuration list for PBXProject "grocy-ios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 78EC777F2533857400DF3BA5;
+			productRefGroup = 78EC77892533857400DF3BA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78EC77872533857400DF3BA5 /* grocy-ios */,
+				78EC77982533857500DF3BA5 /* grocy-iosTests */,
+				78EC77A32533857500DF3BA5 /* grocy-iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78EC77862533857400DF3BA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EC77932533857500DF3BA5 /* Preview Assets.xcassets in Resources */,
+				78EC77902533857500DF3BA5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EC77972533857500DF3BA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EC77A22533857500DF3BA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78EC77842533857400DF3BA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EC778E2533857400DF3BA5 /* ContentView.swift in Sources */,
+				78EC778C2533857400DF3BA5 /* grocy_iosApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EC77952533857500DF3BA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EC779E2533857500DF3BA5 /* grocy_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78EC77A02533857500DF3BA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78EC77A92533857500DF3BA5 /* grocy_iosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78EC779B2533857500DF3BA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78EC77872533857400DF3BA5 /* grocy-ios */;
+			targetProxy = 78EC779A2533857500DF3BA5 /* PBXContainerItemProxy */;
+		};
+		78EC77A62533857500DF3BA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78EC77872533857400DF3BA5 /* grocy-ios */;
+			targetProxy = 78EC77A52533857500DF3BA5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		78EC77AB2533857500DF3BA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		78EC77AC2533857500DF3BA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78EC77AE2533857500DF3BA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"grocy-ios/Preview Content\"";
+				DEVELOPMENT_TEAM = 4CZEVM6X98;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "grocy-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "georgmeissner.grocy-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78EC77AF2533857500DF3BA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"grocy-ios/Preview Content\"";
+				DEVELOPMENT_TEAM = 4CZEVM6X98;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "grocy-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "georgmeissner.grocy-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		78EC77B12533857500DF3BA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4CZEVM6X98;
+				INFOPLIST_FILE = "grocy-iosTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "georgmeissner.grocy-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/grocy-ios.app/grocy-ios";
+			};
+			name = Debug;
+		};
+		78EC77B22533857500DF3BA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4CZEVM6X98;
+				INFOPLIST_FILE = "grocy-iosTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "georgmeissner.grocy-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/grocy-ios.app/grocy-ios";
+			};
+			name = Release;
+		};
+		78EC77B42533857500DF3BA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4CZEVM6X98;
+				INFOPLIST_FILE = "grocy-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "georgmeissner.grocy-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "grocy-ios";
+			};
+			name = Debug;
+		};
+		78EC77B52533857500DF3BA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4CZEVM6X98;
+				INFOPLIST_FILE = "grocy-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "georgmeissner.grocy-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "grocy-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78EC77832533857400DF3BA5 /* Build configuration list for PBXProject "grocy-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78EC77AB2533857500DF3BA5 /* Debug */,
+				78EC77AC2533857500DF3BA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78EC77AD2533857500DF3BA5 /* Build configuration list for PBXNativeTarget "grocy-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78EC77AE2533857500DF3BA5 /* Debug */,
+				78EC77AF2533857500DF3BA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78EC77B02533857500DF3BA5 /* Build configuration list for PBXNativeTarget "grocy-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78EC77B12533857500DF3BA5 /* Debug */,
+				78EC77B22533857500DF3BA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78EC77B32533857500DF3BA5 /* Build configuration list for PBXNativeTarget "grocy-iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78EC77B42533857500DF3BA5 /* Debug */,
+				78EC77B52533857500DF3BA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 78EC77802533857400DF3BA5 /* Project object */;
+}
