@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct grocy_iosApp: App {
+//    @EnvironmentObject var grocyVM: GrocyViewModel
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView()//.environmentObject($grocyVM)
         }
     }
 }
