@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-//import SwiftUI
+import SwiftUI
 
 enum getDataMode {
     case systemInfo, systemDBChangedTime//, users, stock, mdProducts, mdLocations, mdShoppingLocations, mdQuantityUnits, mdProductGroups
@@ -15,9 +15,10 @@ enum getDataMode {
 
 class GrocyViewModel: ObservableObject {
     var grocyApi: GrocyAPIProvider
-    
-    //    @AppStorage("grocyServerURL") var grocyServerURL: String = ""
-    //    @AppStorage("grocyAPIKey") var grocyAPIKey: String = ""
+
+    @AppStorage("grocyServerURL") var grocyServerURL: String = ""
+    @AppStorage("grocyAPIKey") var grocyAPIKey: String = ""
+    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
     
     static let shared = GrocyViewModel()
     
@@ -41,11 +42,36 @@ class GrocyViewModel: ObservableObject {
     
     let jsonEncoder = JSONEncoder()
     
-    //    init(baseURL: String, apiKey: String) {
     init() {
-        //        self.grocyApi = GrocyApi(baseURL: baseURL, apiKey: apiKey)
         self.grocyApi = GrocyApi()
+        grocyApi.setLoginData(baseURL: grocyServerURL, apiKey: grocyAPIKey)
         jsonEncoder.outputFormatting = .prettyPrinted
+    }
+    
+    func checkLoginInfo(baseURL: String, apiKey: String) {
+        grocyApi.setLoginData(baseURL: baseURL, apiKey: apiKey)
+        let cancellable = grocyApi.getSystemInfo()
+            .sink(receiveCompletion: { result in
+                switch result {
+                case .failure(let error):
+                    print("Handle error: sysinfo\(error)")
+                case .finished:
+                    break
+                }
+                
+            }) { (systemInfo) in
+                DispatchQueue.main.async {
+                    if !systemInfo.grocyVersion.version.isEmpty {
+                        print("login success")
+                        self.systemInfo = systemInfo
+                        self.isLoggedIn = true
+                    } else {
+                        print("login fail")
+                        self.isLoggedIn = false
+                    }
+                }
+            }
+        cancellables.insert(cancellable)
     }
     
     func getSystemInfo() {

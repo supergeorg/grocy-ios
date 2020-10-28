@@ -15,8 +15,6 @@ struct ContentView: View {
     @AppStorage("grocyServerURL") var grocyServerURL: String = ""
     @AppStorage("grocyAPIKey") var grocyAPIKey: String = ""
     
-    @ObservedObject private var grocyVM = GrocyViewModel()
-    
     @State var tabSelection: Int = 1
     
     var body: some View {
@@ -38,7 +36,7 @@ struct ContentView: View {
                     Image(systemName: "text.book.closed")
                     Text("Master Data")
                 } }.tag(3)
-                GrocyInfoView().tabItem { VStack{
+                SettingsView().tabItem { VStack{
                     Image(systemName: "gear")
                     Text("Settings")
                 }}.tag(4)
@@ -48,9 +46,6 @@ struct ContentView: View {
                 //            }}.tag(5)
             }
             .animation(.default)
-            .onAppear(perform: {
-//                grocyVM
-            })
         }
     }
 }

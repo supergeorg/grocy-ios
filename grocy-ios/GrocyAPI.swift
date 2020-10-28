@@ -41,6 +41,7 @@ public enum ResponseCodes: Int {
 }
 
 protocol GrocyAPIProvider {
+    func setLoginData(baseURL: String, apiKey: String)
     // MARK: - System
     func getSystemInfo() -> AnyPublisher<SystemInfo, APIError>
     func getSystemDBChangedTime() -> AnyPublisher<SystemDBChangedTime, APIError>
@@ -62,17 +63,20 @@ protocol GrocyAPIProvider {
 }
 
 public class GrocyApi: GrocyAPIProvider {
-    private let baseURL = "http://192.168.178.31/grocy/public/api"
-    private let apiKey = "gGYWSTziFMWcQj5HMaw9HkWbdHJmz8lMa3RZ6eipYKrTvPkwsG"
     
-//    private var baseURL: String = "http://localhost:8888/grocy/public/api"
-//    private var apiKey: String = "BzEMIdVFswwkciA2tHBmz0SFEzL5rhPVByrut5DfIpYW781VFK"
+    private var baseURL: String = ""
+    private var apiKey: String = ""
     
 //    init(baseURL: String, apiKey: String) {
-//        self.baseURL = baseURL
-//        self.apiKey = apiKey
-//    }
+//            self.baseURL = baseURL
+//            self.apiKey = apiKey
+//        }
     
+    func setLoginData(baseURL: String, apiKey: String) {
+        self.baseURL = baseURL
+        self.apiKey = apiKey
+    }
+
     private enum Method: String {
         case GET
         case POST
@@ -98,7 +102,7 @@ public class GrocyApi: GrocyAPIProvider {
     }
     
     private func request(for endpoint: Endpoint, method: Method, object: ObjectEntities? = nil, id: String? = nil, content: Data? = nil, query: String? = nil) -> URLRequest {
-        var path = "\(baseURL)\(endpoint.rawValue)"
+        var path = "\(baseURL)/api\(endpoint.rawValue)"
         if path.contains("{entity}") { path = path.replacingOccurrences(of: "{entity}", with: object!.rawValue) }
         if path.contains("{objectId}") { path = path.replacingOccurrences(of: "{objectId}", with: id!) }
         if path.contains("{userId}") { path = path.replacingOccurrences(of: "{userId}", with: id!) }
