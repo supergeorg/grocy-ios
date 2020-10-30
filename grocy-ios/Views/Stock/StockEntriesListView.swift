@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StockEntriesListView: View {
-    @ObservedObject private var grocyVM = GrocyViewModel()
+    @StateObject private var grocyVM = GrocyViewModel()
     
     var product: MDProduct
     
@@ -30,25 +30,9 @@ struct StockEntriesListView: View {
                     Text("MHD: \(formatDateOutput(productEntry.bestBeforeDate)), Kauf: \(formatDateOutput(productEntry.purchasedDate))")
                     Text("Ort: \(grocyVM.mdLocations.first(where: { $0.id == productEntry.locationID })?.name ?? "Standortfehler")")
                 }
-//                HStack {
-//                    Text(productEntry.id)
-//                    Text(productEntry.bestBeforeDate)
-//                    Text(productEntry.purchasedDate)
-//                }
-//                "id": "1",
-//                    "product_id": "3",
-//                    "amount": "2",
-//                    "best_before_date": "2020-10-28",
-//                    "purchased_date": "2020-10-26",
-//                    "stock_id": "5f96c7e0bbf52",
-//                    "price": "5",
-//                    "open": "0",
-//                    "opened_date": null,
-//                    "row_created_timestamp": "2020-10-26 13:58:08",
-//                    "location_id": "0",
-//                    "shopping_location_id": "0"
             }
         }
+        .navigationTitle("Bestand")
         .onAppear(perform: {
             grocyVM.getProductEntries(productID: product.id)
             grocyVM.getMDLocations()

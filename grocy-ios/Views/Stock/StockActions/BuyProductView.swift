@@ -28,37 +28,37 @@
 import SwiftUI
 
 struct BuyProductView: View {
-    @ObservedObject var grocyVM: GrocyViewModel = .shared
+    @StateObject private var grocyVM: GrocyViewModel = .shared
     
-    @State var productID: String = ""
-    @State var bestBeforeDate: Date = Date()
-    @State var amount: Int = 0
-    @State var price: Double = 0.0
-    @State var isSinglePrice: Bool = true
-    @State var shoppingLocationID: String = ""
-    @State var locationID: String = ""
-    @State var productDoesntSpoil: Bool = false
+    @Environment(\.presentationMode) var presentation
     
-    @State var searchProductTerm: String = ""
-    var filteredProducts: [MDProduct] {
+    @State private var productID: String = ""
+    @State private var bestBeforeDate: Date = Date()
+    @State private var amount: Int = 0
+    @State private var price: Double = 0.0
+    @State private var isSinglePrice: Bool = true
+    @State private var shoppingLocationID: String = ""
+    @State private var locationID: String = ""
+    @State private var productDoesntSpoil: Bool = false
+    
+    @State private var searchProductTerm: String = ""
+    private var filteredProducts: [MDProduct] {
         grocyVM.mdProducts.filter {
             searchProductTerm.isEmpty ? true : $0.name.lowercased().contains(searchProductTerm.lowercased())
         }
     }
     
-    var currentQuantityUnit: MDQuantityUnit {
+    private var currentQuantityUnit: MDQuantityUnit {
         getQuantityUnit() ?? MDQuantityUnit(id: "0", name: "Stück", mdQuantityUnitDescription: "", rowCreatedTimestamp: "", namePlural: "Stücke", pluralForms: nil, userfields: nil)
     }
+
+    private let priceFormatter = NumberFormatter()
     
-    @Binding var isShown: Bool
-    
-    let priceFormatter = NumberFormatter()
-    
-    init(isShown: Binding<Bool>) {
-        self._isShown = isShown
-        priceFormatter.numberStyle = .currency
-        priceFormatter.locale = Locale(identifier: "de_DE")
-    }
+//    init(isShown: Binding<Bool>) {
+//        self._isShown = isShown
+//        priceFormatter.numberStyle = .currency
+//        priceFormatter.locale = Locale(identifier: "de_DE")
+//    }
     
     func resetForm() {
         productID = ""
@@ -173,12 +173,14 @@ struct BuyProductView: View {
                 grocyVM.getMDQuantityUnits()
                 grocyVM.getMDLocations()
                 grocyVM.getMDShoppingLocations()
+                priceFormatter.numberStyle = .currency
+                priceFormatter.locale = Locale(identifier: "de_DE")
             })
             .navigationBarTitle("Einkauf")
             .toolbar(content: {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Abbrechen") {
-                        self.isShown = false
+                        presentation.wrappedValue.dismiss()
                     }
                 }
                 ToolbarItem(placement: .confirmationAction) {
@@ -195,6 +197,6 @@ struct BuyProductView: View {
 
 struct BuyProductView_Previews: PreviewProvider {
     static var previews: some View {
-        BuyProductView(isShown: Binding.constant(true))
+        BuyProductView()
     }
 }

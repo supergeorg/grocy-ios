@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ConsumeProductView: View {
-    @ObservedObject var grocyVM: GrocyViewModel = .shared
+    @StateObject var grocyVM: GrocyViewModel = .shared
     
-    @Binding var isShown: Bool
+    @Environment(\.presentationMode) var presentation
     
     @State var productID: String = ""
     @State var amount: Int = 0
@@ -70,11 +70,10 @@ struct ConsumeProductView: View {
                                 Text(product.name).tag(product.id)
                             }
                         }.onChange(of: productID, perform: { value in
-                            //                            if locationID.isEmpty {
                             if let newLoc = grocyVM.mdProducts.first(where: { $0.id == productID })?.locationID {
                                 locationID = newLoc
                             }
-                            //                            }
+                            grocyVM.getProductEntries(productID: productID)
                         })
                     }
                     HStack{
@@ -125,7 +124,7 @@ struct ConsumeProductView: View {
             .toolbar(content: {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Abbrechen") {
-                        self.isShown = false
+                        presentation.wrappedValue.dismiss()
                     }
                 }
                 ToolbarItem(placement: .confirmationAction) {
@@ -147,7 +146,6 @@ struct ConsumeProductView: View {
                 grocyVM.getMDProducts()
                 grocyVM.getMDQuantityUnits()
                 grocyVM.getMDLocations()
-                grocyVM.getProductEntries(productID: "3")
             })
         }
     }
@@ -155,6 +153,6 @@ struct ConsumeProductView: View {
 
 struct ConsumeProductView_Previews: PreviewProvider {
     static var previews: some View {
-        ConsumeProductView(isShown: Binding.constant(true))
+        ConsumeProductView()
     }
 }
