@@ -9,16 +9,18 @@ import Foundation
 
 // MARK: - MDProduct
 struct MDProduct: Codable {
-    let id, name, mdProductDescription, locationID: String
-    let quIDPurchase, quIDStock, quFactorPurchaseToStock, barcode: String
-    let minStockAmount, defaultBestBeforeDays, rowCreatedTimestamp, productGroupID: String
-    let pictureFileName: String?
+    let id, name: String
+    let mdProductDescription: String?
+    let locationID, quIDPurchase, quIDStock, quFactorPurchaseToStock: String
+    let barcode: String?
+    let minStockAmount, defaultBestBeforeDays, rowCreatedTimestamp: String
+    let productGroupID, pictureFileName: String?
     let defaultBestBeforeDaysAfterOpen, allowPartialUnitsInStock, enableTareWeightHandling, tareWeight: String
     let notCheckStockFulfillmentForRecipes: String
-    let parentProductID: String?
-    let calories, cumulateMinStockAmountOfSubProducts: String
-    let defaultBestBeforeDaysAfterFreezing, defaultBestBeforeDaysAfterThawing, shoppingLocationID: String
-    let userfields: String?
+    let parentProductID, calories: String?
+    let cumulateMinStockAmountOfSubProducts, defaultBestBeforeDaysAfterFreezing, defaultBestBeforeDaysAfterThawing: String
+    let shoppingLocationID: String?
+    let userfields: Userfields?
 
     enum CodingKeys: String, CodingKey {
         case id, name
@@ -47,6 +49,14 @@ struct MDProduct: Codable {
         case userfields
     }
 }
+
+// MARK: - Userfields
+// so geht das nicht!!!
+struct Userfields: Codable {
+    let cronometerid, sultanmarked: String
+}
+
+typealias MDProducts = [MDProduct]
 
 // MARK: - MDProduct
 struct MDProductPOST: Codable {
@@ -89,5 +99,3 @@ struct MDProductPOST: Codable {
         case userfields
     }
 }
-
-typealias MDProducts = [MDProduct]

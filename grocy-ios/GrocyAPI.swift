@@ -16,6 +16,7 @@ public enum APIError: Error {
     case invalidResponse
     case unsuccessful
     case errorString(String)
+    case timeout
 }
 
 //public enum Mode {
@@ -88,12 +89,12 @@ public class GrocyApi: GrocyAPIProvider {
         let urlRequest = request(for: endPoint, method: method, object: object, id: id, content: content, query: query)
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
             .mapError{ _ in APIError.serverError }
-            .tryMap() { element -> Data in
-                guard let httpResponse = element.response as? HTTPURLResponse,
+            .tryMap() { data, response -> Data in
+                guard let httpResponse = response as? HTTPURLResponse,
                       httpResponse.statusCode == 200 else {
                     throw URLError(.badServerResponse)
                 }
-                return element.data
+                return data
             }
             .decode(type: T.self, decoder: JSONDecoder())
             .mapError { _ in APIError.decodingError }
@@ -122,6 +123,8 @@ public class GrocyApi: GrocyAPIProvider {
         if content != nil {
             request.httpBody = content
         }
+        
+        request.timeoutInterval = 3
         return request
     }
 }

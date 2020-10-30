@@ -9,9 +9,11 @@ import Foundation
 
 // MARK: - MDShoppingLocation
 struct MDShoppingLocation: Codable {
-    let id, name, mdShoppingLocationDescription, rowCreatedTimestamp: String
+    let id, name: String
+    let mdShoppingLocationDescription: String?
+    let rowCreatedTimestamp: String
     let userfields: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case id, name
         case mdShoppingLocationDescription = "description"
@@ -20,6 +22,7 @@ struct MDShoppingLocation: Codable {
     }
 }
 
+typealias MDShoppingLocations = [MDShoppingLocation]
 struct MDShoppingLocationPOST: Codable {
     let id:Int
     let name, mdShoppingLocationDescription, rowCreatedTimestamp: String
@@ -32,5 +35,3 @@ struct MDShoppingLocationPOST: Codable {
         case userfields
     }
 }
-
-typealias MDShoppingLocations = [MDShoppingLocation]

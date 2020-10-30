@@ -19,8 +19,11 @@ class GrocyViewModel: ObservableObject {
     @AppStorage("grocyServerURL") var grocyServerURL: String = ""
     @AppStorage("grocyAPIKey") var grocyAPIKey: String = ""
     @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
+    @AppStorage("isDemoModus") var isDemoModus: Bool = false
     
     static let shared = GrocyViewModel()
+    
+    @Published var lastLoadingFailed: Bool = false
     
     @Published var systemInfo: SystemInfo?
     @Published var systemDBChangedTime: SystemDBChangedTime?
@@ -44,8 +47,25 @@ class GrocyViewModel: ObservableObject {
     
     init() {
         self.grocyApi = GrocyApi()
-        grocyApi.setLoginData(baseURL: grocyServerURL, apiKey: grocyAPIKey)
+        if !isDemoModus {
+            grocyApi.setLoginData(baseURL: grocyServerURL, apiKey: grocyAPIKey)
+        } else {
+            grocyApi.setLoginData(baseURL: "https://demo.grocy.info/", apiKey: "")
+        }
         jsonEncoder.outputFormatting = .prettyPrinted
+//        self.lastLoadingFailed = true
+    }
+    
+    func setDemoModus() {
+        grocyApi.setLoginData(baseURL: "https://demo.grocy.info/", apiKey: "")
+        isDemoModus = true
+        isLoggedIn = true
+    }
+    
+    func setLoginModus() {
+        grocyApi.setLoginData(baseURL: grocyServerURL, apiKey: grocyAPIKey)
+        isDemoModus = false
+        isLoggedIn = true
     }
     
     func checkLoginInfo(baseURL: String, apiKey: String) {
@@ -65,6 +85,7 @@ class GrocyViewModel: ObservableObject {
                         print("login success")
                         self.systemInfo = systemInfo
                         self.isLoggedIn = true
+                        self.setLoginModus()
                     } else {
                         print("login fail")
                         self.isLoggedIn = false
@@ -79,8 +100,10 @@ class GrocyViewModel: ObservableObject {
             .sink(receiveCompletion: { result in
                 switch result {
                 case .failure(let error):
+                    self.lastLoadingFailed = true
                     print("Handle error: sysinfo\(error)")
                 case .finished:
+                    self.lastLoadingFailed = false
                     break
                 }
                 
@@ -190,10 +213,11 @@ class GrocyViewModel: ObservableObject {
     func getProductDetails() {}
     func getProductLocations() {}
     func getProductEntries(productID: String) {
-        let cancellable = grocyApi.getStockProduct(stockModeGet: .entries, id: productID, query: "?include_sub_products=true")
+        grocyApi.getStockProduct(stockModeGet: .entries, id: productID, query: "?include_sub_products=true")
             .replaceError(with: [])
             .assign(to: \.stockProductEntries[productID], on: self)
-        cancellables.insert(cancellable)
+            .store(in: &cancellables)
+//        cancellables.insert(cancellable)
     }
     func getProductPriceHistory() {}
     

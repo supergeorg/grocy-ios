@@ -9,7 +9,9 @@ import Foundation
 
 // MARK: - MDProductGroup
 struct MDProductGroup: Codable {
-    let id, name, mdProductGroupDescription, rowCreatedTimestamp: String
+    let id, name: String
+    let mdProductGroupDescription: String?
+    let rowCreatedTimestamp: String
     let userfields: String?
 
     enum CodingKeys: String, CodingKey {
@@ -19,6 +21,8 @@ struct MDProductGroup: Codable {
         case userfields
     }
 }
+
+typealias MDProductGroups = [MDProductGroup]
 
 struct MDProductGroupPOST: Codable {
     let id: Int
@@ -32,5 +36,3 @@ struct MDProductGroupPOST: Codable {
         case userfields
     }
 }
-
-typealias MDProductGroups = [MDProductGroup]
